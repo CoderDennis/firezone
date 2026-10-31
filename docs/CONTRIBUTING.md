@@ -93,7 +93,7 @@ docker compose run --rm elixir /bin/sh -c "mix ecto.create && mix ecto.migrate &
     Created accounts:
     c89bcc8c-9392-4dae-a40d-888aef6d28e0: Firezone Account
 
-docker compose up -d portal gateway primary-client relay-1 relay-2
+docker compose up -d portal gateway primary-client relay-1 relay-2 httpbin
 ```
 
 You should now be able to connect to `http://localhost:8080/<account-uuid-here>`
