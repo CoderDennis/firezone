@@ -93,7 +93,7 @@ docker compose run --rm elixir /bin/sh -c "mix ecto.create && mix ecto.migrate &
     Created accounts:
     c89bcc8c-9392-4dae-a40d-888aef6d28e0: Firezone Account
 
-docker compose up -d portal vault gateway client relay-1 relay-2
+docker compose up -d portal gateway primary-client relay-1 relay-2
 ```
 
 You should now be able to connect to `http://localhost:8080/<account-uuid-here>`
@@ -156,10 +156,10 @@ macOS system keychain by default. To trust the certificate in Firefox, either:
 
 ```sh
 # To test that a client can ping the resource
-docker compose exec -it client ping 10.20.0.100
+docker compose exec -it primary-client ping 10.20.0.100
 
 # You can also directly use the client
-docker compose exec -it client /bin/sh
+docker compose exec -it primary-client /bin/sh
 ```
 
 ## Developer Environment Setup
